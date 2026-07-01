@@ -1,35 +1,62 @@
-<!doctype html><html lang="de"><head>
+<!doctype html>
+<html lang="de"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DeutschQuest 4 - Sprint 2.0</title>
+<title>DeutschQuest 4 - Sprint 2.1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-</head><body>
-<header><h1>🇩🇪 DeutschQuest Story Engine</h1><button id="theme">🌙</button></header>
-<div class="wrap">
-<section class="left">
-<h2>Reisekarte</h2>
-<svg viewBox="0 0 320 520" class="map">
-<path d="M150 40 L170 110 L145 180 L180 250 L140 330 L165 410 L150 480" class="route"/>
-<circle class="city unlocked" cx="150" cy="40" r="12" data-city="Berlin"/>
-<circle class="city" cx="170" cy="110" r="12" data-city="Leipzig"/>
-<circle class="city" cx="145" cy="180" r="12" data-city="Nürnberg"/>
-<circle class="city" cx="180" cy="250" r="12" data-city="München"/>
-<circle class="train" id="train" cx="150" cy="40" r="7"/>
+</head>
+<body>
+<div class="layout">
+<aside>
+<h2>🇩🇪 DeutschQuest</h2>
+<div class="progressCard">
+<div class="level">LEVEL 4</div>
+<div class="xp">XP 1240</div>
+</div>
+<h3>QuestPass</h3>
+<ul id="passport"></ul>
+</aside>
+
+<main>
+<header>
+<h1>Story Mode</h1>
+<button id="theme">🌙</button>
+</header>
+
+<div class="story">
+
+<section class="mapCard">
+<svg viewBox="0 0 800 500">
+<path id="route" d="M120 80 C220 130 260 180 350 220 S520 310 650 390"
+fill="none" stroke="#7d8792" stroke-width="8"/>
+
+<circle class="city unlocked" cx="120" cy="80" r="16" data-name="Berlin"/>
+<circle class="city" cx="260" cy="170" r="16" data-name="Leipzig"/>
+<circle class="city" cx="430" cy="260" r="16" data-name="Nürnberg"/>
+<circle class="city" cx="650" cy="390" r="16" data-name="München"/>
+
+<circle id="train" cx="120" cy="80" r="9"/>
 </svg>
 </section>
-<section class="right">
+
+<section class="info">
 <div class="card">
-<h2 id="city">Berlin</h2>
-<p id="desc">Erste Mission freigeschaltet.</p>
-<button id="travel">🚆 Reise starten</button>
+<h2 id="cityTitle">Berlin</h2>
+<p id="cityDesc">Willkommen! Starte deine erste Mission.</p>
+<button id="travel">🚆 Weiterreisen</button>
 </div>
+
 <div class="card">
-<h3>QuestPass</h3>
-<ul id="pass"><li>✓ Berlin</li></ul>
+<h3>Mission</h3>
+<p>Lerne 10 neue Wörter und schalte die nächste Stadt frei.</p>
+<div class="bar"><span id="bar"></span></div>
 </div>
 </section>
+
+</div>
+</main>
 </div>
 <script src="assets/js/app.js"></script>
 </body></html>
