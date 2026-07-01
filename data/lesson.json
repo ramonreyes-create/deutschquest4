@@ -1,0 +1,7 @@
+{
+"lesson":"Lektion 1",
+"items":[
+{"de":"Hallo","es":"Hola","type":"flash"},
+{"de":"Danke","es":"Gracias","type":"mc","options":["Gracias","Perdón","Hasta luego"]},
+{"de":"Tschüss","es":"Chao","type":"write"}
+]}
