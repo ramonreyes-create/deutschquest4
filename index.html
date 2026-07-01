@@ -1,26 +1,25 @@
-<!doctype html><html lang="de"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DeutschQuest 4.0 Sprint 1.2</title>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeutschQuest 4.0 Sprint 1.3</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-</head><body>
-<div class="app">
-<aside class="sidebar">
-<h2>🇩🇪 DeutschQuest</h2>
+</head>
+<body>
+<header><h1>🇩🇪 DeutschQuest 4.0</h1><button id="theme">🌙</button></header>
+
 <nav>
-<a class="active" data-page="dashboard">🏠 Dashboard</a>
-<a data-page="story">🗺 Story</a>
-<a data-page="quest">🎒 QuestPass</a>
-<a data-page="profile">👤 Profil</a>
+<button data-page="dashboard">Dashboard</button>
+<button data-page="story">Story</button>
+<button data-page="quest">QuestPass</button>
 </nav>
-<div class="user"><div class="avatar">R</div><div><b>Ramón</b><br>Level 4</div></div>
-</aside>
-<main>
-<header><h1 id="title">Dashboard</h1><button id="theme">🌙</button></header>
-<div id="view"></div>
-</main>
-</div>
+
+<main id="view"></main>
+
 <script type="module" src="assets/js/app.js"></script>
-</body></html>
+</body>
+</html>
