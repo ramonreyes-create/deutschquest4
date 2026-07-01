@@ -1,1 +1,83 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>DQ Sprint4</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap' rel='stylesheet'><link rel='stylesheet' href='assets/css/style.css'></head><body><div class='app'><h1>DeutschQuest 4 · Sprint 4</h1><h2 id='lesson'></h2><div id='exercise' class='card'></div><div id='nav'></div><div class='stats'>XP <span id='xp'>0</span></div></div><script src='assets/js/app.js'></script></body></html>
+<!doctype html>
+<html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeutschQuest 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--nav:#0f1b2a;--accent:#ffc533}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif;background:var(--bg)}
+.app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+aside{background:var(--nav);color:#fff;padding:24px}
+aside a{display:block;padding:12px;border-radius:12px;margin:6px 0;cursor:pointer}
+aside a.active,aside a:hover{background:#22354a}
+main{padding:28px}
+.card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+.hidden{display:none}
+button{background:var(--accent);border:none;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+input{padding:10px;border-radius:10px;border:1px solid #ccc}
+@media(max-width:800px){.app{grid-template-columns:1fr}aside{display:flex;overflow:auto;gap:8px}}
+</style></head>
+<body>
+<div class="app">
+<aside>
+<h2>🇩🇪 DeutschQuest</h2>
+<a class="active" data="dashboard">Dashboard</a>
+<a data="lesson">Lektion</a>
+<a data="story">Story</a>
+</aside>
+<main>
+<div id="dashboard">
+<h1>Willkommen, Ramón 👋</h1>
+<div class="stats">
+<div class="card"><b>XP</b><h2 id="xp">0</h2></div>
+<div class="card"><b>Level</b><h2 id="level">1</h2></div>
+<div class="card"><b>Serie</b><h2>1</h2></div>
+</div>
+<div class="card"><h2>🚆 Weiterlernen</h2><p>Comienza la primera misión.</p></div>
+</div>
+
+<div id="lesson" class="hidden">
+<div class="card">
+<h2 id="ltitle"></h2>
+<h1 id="word"></h1>
+<button id="show">Antwort zeigen</button>
+<p id="ans"></p>
+<div style="margin-top:18px">
+<button id="ok">Gewusst +10XP</button>
+<button id="next">Weiter</button>
+</div>
+</div>
+</div>
+
+<div id="story" class="hidden">
+<div class="card">
+<h2>🗺 Story Mode</h2>
+<p>Ruta inicial:</p>
+<p>✅ Berlin → ⬜ Leipzig → ⬜ Nürnberg → ⬜ München</p>
+</div>
+</div>
+</main>
+</div>
+<script>
+let xp=Number(localStorage.getItem('xp')||0);
+let idx=0,data=[];
+document.getElementById('xp').textContent=xp;
+document.querySelectorAll('aside a').forEach(a=>a.onclick=()=>{
+document.querySelectorAll('aside a').forEach(x=>x.classList.remove('active'));
+a.classList.add('active');
+['dashboard','lesson','story'].forEach(id=>document.getElementById(id).classList.add('hidden'));
+document.getElementById(a.getAttribute('data')).classList.remove('hidden');
+});
+fetch('data/lesson.json').then(r=>r.json()).then(j=>{data=j.cards;ltitle.textContent=j.title;render();});
+function render(){
+if(idx>=data.length){word.textContent='Mission beendet!';ans.textContent='';return;}
+word.textContent=data[idx].de;ans.textContent='';
+}
+show.onclick=()=>ans.textContent=data[idx].es;
+ok.onclick=()=>{xp+=10;localStorage.setItem('xp',xp);document.getElementById('xp').textContent=xp;}
+next.onclick=()=>{idx++;render();}
+</script>
+</body></html>

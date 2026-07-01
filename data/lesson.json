@@ -1,7 +1,10 @@
+
 {
-"lesson":"Lektion 1",
-"items":[
-{"de":"Hallo","es":"Hola","type":"flash"},
-{"de":"Danke","es":"Gracias","type":"mc","options":["Gracias","Perdón","Hasta luego"]},
-{"de":"Tschüss","es":"Chao","type":"write"}
-]}
+ "title":"Deutschprofis A1 - Lektion 1",
+ "cards":[
+  {"de":"Hallo","es":"Hola"},
+  {"de":"Danke","es":"Gracias"},
+  {"de":"Bitte","es":"Por favor / De nada"},
+  {"de":"Tschüss","es":"Adiós"}
+ ]
+}
