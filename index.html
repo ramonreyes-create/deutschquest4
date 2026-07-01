@@ -1,39 +1,26 @@
 <!doctype html><html lang="de"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DeutschQuest 4.0 - Sprint 1.1B</title>
+<title>DeutschQuest 4.0 Sprint 1.2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css"></head>
-<body>
-<div id="layout">
-<aside id="sidebar" class="sidebar">
-<div class="brand">🇩🇪 DeutschQuest</div>
-<button id="toggle">☰</button>
+<link rel="stylesheet" href="assets/css/style.css">
+</head><body>
+<div class="app">
+<aside class="sidebar">
+<h2>🇩🇪 DeutschQuest</h2>
 <nav>
-<a class="active">🏠 Dashboard</a>
-<a>🗺 Story</a><a>🎒 QuestPass</a><a>📚 Bibliothek</a><a>⚙ Einstellungen</a>
+<a class="active" data-page="dashboard">🏠 Dashboard</a>
+<a data-page="story">🗺 Story</a>
+<a data-page="quest">🎒 QuestPass</a>
+<a data-page="profile">👤 Profil</a>
 </nav>
+<div class="user"><div class="avatar">R</div><div><b>Ramón</b><br>Level 4</div></div>
 </aside>
-<main class="main">
-<header><h1>Guten Morgen, Ramón 👋</h1><button id="themeBtn">🌙</button></header>
-<section class="widgets">
-<div class="card"><div class="label">XP</div><div class="value" id="xp">1240</div></div>
-<div class="card"><div class="label">Level</div><div class="value">4</div></div>
-<div class="card"><div class="label">Serie</div><div class="value">12</div></div>
-</section>
-<section class="hero card">
-<h2>🚆 Weiterlernen</h2>
-<p>Heute reist du nach Berlin.</p>
-<div class="progress"><span style="width:68%"></span></div>
-<button>Mission starten</button>
-</section>
-<section class="grid">
-<div class="card fade">🎯 Tagesmission</div>
-<div class="card fade">🗺 Story Mode</div>
-<div class="card fade">📖 Letzte Lektion</div>
-<div class="card fade">🏅 Erfolge</div>
-</section>
-</main></div>
+<main>
+<header><h1 id="title">Dashboard</h1><button id="theme">🌙</button></header>
+<div id="view"></div>
+</main>
+</div>
 <script type="module" src="assets/js/app.js"></script>
 </body></html>
